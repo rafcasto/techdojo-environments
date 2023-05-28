@@ -76,7 +76,6 @@ spec:
             - --api.insecure
             - --providers.kubernetesingress
             - --entrypoints.web.address=:80
-            - --entrypoints.dashboard.address=:8080
             - --entrypoints.storybook.address=:6007
           ports:
             - name: web
