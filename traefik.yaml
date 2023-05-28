@@ -76,6 +76,8 @@ spec:
             - --api.insecure
             - --providers.kubernetesingress
             - --entrypoints.web.address=:80
+            - --entrypoints.storybookqa.address=:6008
+            - --entrypoints.storybooksh.address=:6009
             - --entrypoints.storybook.address=:6007
           ports:
             - name: web
@@ -100,6 +102,10 @@ spec:
       name: dashboard
     - port: 6007
       name: storybook
+    - port: 6009
+      name: storybooksh
+    - port: 6008
+      name: storybookqa
   selector:
     app: traefik
 
