@@ -1,0 +1,19 @@
+pipeline {
+    agent none  
+    stages {
+ 
+        stage('Build Environment'){
+            agent {
+                docker {
+                    image 'docker:latest'
+                    args '-v /usr/local/bin/kubectl:/usr/local/bin/kubectl -v /var/jenkins_home/kubconfig.yaml:/root/kubconfig.yaml -u root'   
+                }
+            }
+            steps{
+               
+                   sh 'kubectl apply -f .  --kubeconfig=kubconfig.yaml  --kubeconfig=/root/kubconfig.yaml'
+                  
+                  }                   
+             }
+    }
+}
