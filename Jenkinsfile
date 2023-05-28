@@ -11,10 +11,10 @@ pipeline {
             }
             steps{
                
-                   sh 'kubectl delete service --all  --kubeconfig=kubconfig.yaml  --kubeconfig=/root/kubconfig.yaml'
+                   /*sh 'kubectl delete service --all  --kubeconfig=kubconfig.yaml  --kubeconfig=/root/kubconfig.yaml'
                    sh 'kubectl delete pods --all  --kubeconfig=kubconfig.yaml --kubeconfig=/root/kubconfig.yaml'
                    sh 'kubectl delete ingress --all  --kubeconfig=kubconfig.yaml --kubeconfig=/root/kubconfig.yaml'
-                   sh 'kubectl delete deployments --all  --kubeconfig=kubconfig.yaml --kubeconfig=/root/kubconfig.yaml'                                         
+                   sh 'kubectl delete deployments --all  --kubeconfig=kubconfig.yaml --kubeconfig=/root/kubconfig.yaml'   */                                      
                    sh 'kubectl apply -f traefik.yaml  --kubeconfig=/root/kubconfig.yaml'
                    sh 'kubectl apply -f ingress/  --kubeconfig=/root/kubconfig.yaml'
                   }                   
