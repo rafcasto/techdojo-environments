@@ -17,7 +17,7 @@ pipeline {
                    sh 'kubectl delete deployments --all  --kubeconfig=kubconfig.yaml --kubeconfig=/root/kubconfig.yaml'   */                                      
                    sh 'kubectl apply -f traefik.yaml  --kubeconfig=/root/kubconfig.yaml'
                    sh 'kubectl apply -f ingress/  --kubeconfig=/root/kubconfig.yaml'
-                   sh 'kubectl apply -f routers/  --kubeconfig=/root/kubconfig.yaml'
+                   
                   }                   
              }
     }
