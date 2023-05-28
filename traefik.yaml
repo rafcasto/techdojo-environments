@@ -101,10 +101,13 @@ spec:
       targetPort: dashboard
       name: dashboard
     - port: 6007
+      targetPort: storybook
       name: storybook
     - port: 6009
+      targetPort: storybooksh
       name: storybooksh
     - port: 6008
+      targetPort: storybookqa
       name: storybookqa
   selector:
     app: traefik
