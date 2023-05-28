@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: storybook-ingress
+  name: storybook-ingress-qa
 spec:
   rules:
   - http:
