@@ -87,7 +87,10 @@ spec:
             - name: storybook
               containerPort: 6007
             - name: storybookqa
-              containerPort: 6008
+              containerPort: 
+            - name: storybooksh
+              containerPort: 6009
+            
 ---
 apiVersion: v1
 kind: Service
