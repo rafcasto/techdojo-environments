@@ -2,6 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: storybook-ingress-qa
+  annotations:
+      kubernetes.io/ingress.class: traefik
+      traefik.ingress.kubernetes.io/router.entrypoints: storybookqa
 spec:
   rules:
   - http:
@@ -10,7 +13,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: storybook-qa-svc
+            name: storybook-svc-qa
             port:
               name: storybookqa
 
