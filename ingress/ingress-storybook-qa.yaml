@@ -4,7 +4,7 @@ metadata:
   name: storybook-ingress-qa
   annotations:
       kubernetes.io/ingress.class: traefik
-      traefik.ingress.kubernetes.io/router.entrypoints: storybookqa
+      traefik.ingress.kubernetes.io/router.entrypoints: storybook-qa
 spec:
   rules:
   - http:
@@ -15,7 +15,7 @@ spec:
           service:
             name: storybook-svc-qa
             port:
-              name: storybookqa
+              name: storybook-qa
 
 
 
