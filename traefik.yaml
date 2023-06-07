@@ -79,6 +79,7 @@ spec:
             - --entrypoints.storybook-qa.address=:6008
             - --entrypoints.storybook-sh.address=:6009
             - --entrypoints.storybook.address=:6007
+            - --entrypoints.tax-calculator-api.address=:8081
           ports:
             - name: web
               containerPort: 80
@@ -90,6 +91,8 @@ spec:
               containerPort: 6008
             - name: storybook-sh
               containerPort: 6009
+            - name: tax-calculator-api
+              containerPort: 8081
             
 ---
 apiVersion: v1
@@ -114,6 +117,9 @@ spec:
     - port: 6008
       targetPort: storybook-qa
       name: storybook-qa
+    - port: 8081
+      targetPort: tax-calculator-api
+      name: tax-calculator-api
   selector:
     app: traefik
 
